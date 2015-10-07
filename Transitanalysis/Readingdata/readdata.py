@@ -30,4 +30,4 @@ for lc in lcs:
         		pdcmap.writerow(entries)
 
 
-f.close()
+f1.close()
