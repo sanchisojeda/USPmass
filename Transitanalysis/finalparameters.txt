@@ -2,13 +2,13 @@
 #            of the MCMC posterior distribution, whereas the second (third) represents the +1 (-1) sigma uncertainty. In row 
 #            order, the parameters are: Depth, Impact parameter, time of transit, Flux uncertainty, Sum of LD coefficients, 
 #            Mass of the star, Radius of the star (gaussian priors on both), out of eclipse flux, Planet radius, R_s/a.
-1.6641e-04   1.0375e-05   9.0538e-06
-3.7302e-01   1.6247e-01   2.2258e-01
-9.9990e-01   2.9727e-04   3.0480e-04
-5.8512e-06   2.4843e-06   3.1875e-06
-8.0168e-01   1.3064e-01   1.5807e-01
-1.0021e+00   3.9917e-02   3.9455e-02
-1.0673e+00   8.6114e-02   5.7815e-02
-1.0000e+00   1.6048e-06   1.5866e-06
-1.4961e+00   1.6344e-01   1.0417e-01
-3.2480e-01   2.6223e-02   1.7213e-02
+1.6151e-04   9.9575e-06   8.1722e-06
+3.5043e-01   1.6873e-01   2.1122e-01
+1.0000e+00   2.9844e-04   2.9192e-04
+5.5674e-06   2.4875e-06   3.1283e-06
+8.2671e-01   1.1731e-01   1.5142e-01
+1.0006e+00   3.9913e-02   3.9807e-02
+1.0604e+00   8.4768e-02   5.2343e-02
+1.0000e+00   1.6460e-06   1.6703e-06
+1.4639e+00   1.5879e-01   9.0636e-02
+3.2275e-01   2.6250e-02   1.5306e-02
