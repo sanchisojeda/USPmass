@@ -33,5 +33,23 @@ main mission.
 * "Prelimtransitfit.ipynb": Uses initial guess for the transit parameters to generate a folded light curve and obtain an improved guess for certain transit parameters like the transit depth and impact parameter. These new parameters are used to generate folded light curves for each quarter (individual transits are barely detectable), which are then fitted to obtain transit times. The script outputs the final orbital period and time of transit and the final folded light curve to be analized in the next script.
 * "Transitfit.ipynb": Computes the final transit parameters with a large MCMC run, using all the information from "Prelimtransitfit.ipynb".
 
+## ActivityAnalysis folder:
+
+### Input
+
+Kepler data: In this case we use the same data already processed in the "Transitanalysis folder", "PDCMAP.sav"
+
+### Output
+
+The only output is a tentative measurement of the rotation period of the star (~31 days) from the autocorrelation function. Once the Gaussian process analysis is finished, there will also be hyperparameters as outputs.
+
+### Main scripts:
+
+* "ACFactivity.ipynb": From the PDCMAP irregurlarly spaced photometric time-series data, it creates a new evenly sampled photometric time-series and computes the autocorrelation function. A peak is detected around 31 days, which likely representes the rotation period of the star.
+* "GaussianActivityXXX(unfinished)": Two failed attempts to fit a Gaussian process to the photometric time-series, using two different types of Kernels (Exponential and sine kernels). The low amplitude of the signal is likely to blame for the complexity of the problem, but new attempts need to be made to trully understand the data from a Gaussia Process point of view.
+
+## RVanalysis folder:
+
+### Input
 
 * Keck data: The radial velocities obtained with the keck telescope are provided as a text file with 7 columns, that can be easily read into python using the read_table command. 
