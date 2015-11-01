@@ -1,5 +1,0 @@
-#  New orbital ephemeris from Kepler data Q2-16
-6.892105720e-01
-5.487173148e-07
-5.319022893e+01
-6.504007459e-04
