@@ -1,8 +1,7 @@
 # USPmass
 In this repository I share a series of tools designed to measure the
 mass and radius of an exoplanet using time series photometric data from the Kepler
-telescope and radial velocities measured with Keck . The tools are written in Python as a
-series of Ipython Notebooks, with annoted comments and structured in
+telescope and radial velocities measured with Keck. In particular, the planet analyzed here is KOI 1169b (Kepler name will come later) The tools are written in Python as a series of Ipython Notebooks, with annoted comments and structured in
 different folders. Before describing each one, it is important to note that you will need the following packages are used and are required to run the scripts:
 
 * Scipy: Including pandas, numpy, matplotlib, interpolate and optimize.
@@ -53,3 +52,30 @@ The only output is a tentative measurement of the rotation period of the star (~
 ### Input
 
 * Keck data: The radial velocities obtained with the keck telescope are provided as a text file with 7 columns, that can be easily read into python using the read_table command. 
+
+### Output
+
+* The semi-amplitude of the RV signal, from which the mass of the planet can be easily obtained. Each script outputs its own value 
+
+### Main scripts:
+
+Each of the script follows the same pattern, the keck data is read and a series of observations are selected, an algorithm is applied to obtain the semi-amplitude of the radial velocity signal, and a final value (with associated uncertainties) is given at the end. The model always has the planet signal + an additional model to describe the long term variations on the Radial Velocity curve. The particular description for each script is in the title, in the form of:
+
+* AlldataXXX: all the RVs are used in the analysis
+** yyyGaussianPeriodic: Gaussian process fit with a periodic Kernel
+** yyyGaussianQuasiPeriodic: Guassian process fit with an additional exponential kernel for quasiperiodicity
+** yyyGaussianQuasiPeriodicLogs: Same as before, but using the log of the hyperparameters for better convergence
+** yyyOnePeriod: One sinusoidal to represent the activity
+** yyyPolynomial: A second order polynomial to represent the activity
+** yyyThreeHarmonics: Three sinusoids with periods equal to Prot, Prot/2 and Prot/3
+** yyyThreePeriods: Three sinusoids with independent periods
+** yyyThreePeriodsMCMC: Same as the one above but using a full MCMC to estimate uncertainties
+** yyyTwoPeriods: Only two sinusoids with independent periods
+* SimpleMassXXX: Simple polynomial fit only using part of the dataset
+** yyyWeek1: Only uses the first week of intense observations
+** yyyWeek2: Only uses the second week of intense observations
+** yyyTwoWeeks: Uses both weeks with an independent polynomial for each one.
+
+## Comparison folder:
+
+In this folder there is only one notebook, "PlanetComparison", where a pandas dataframe is defined with all the information about all the planets smaller than twice the size of Earth published to date, including the one analyzed in here. The dataframe structure permits queries in very simple terms, and to also plot some variables againts the other with Matplotlib. This book also shows that KOI1169b is the hottest rocky planet discovered to date. 
