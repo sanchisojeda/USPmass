@@ -62,19 +62,19 @@ The only output is a tentative measurement of the rotation period of the star (~
 Each of the script follows the same pattern, the keck data is read and a series of observations are selected, an algorithm is applied to obtain the semi-amplitude of the radial velocity signal, and a final value (with associated uncertainties) is given at the end. The model always has the planet signal + an additional model to describe the long term variations on the Radial Velocity curve. The particular description for each script is in the title, in the form of:
 
 * AlldataXXX: all the RVs are used in the analysis
-** yyyGaussianPeriodic: Gaussian process fit with a periodic Kernel
-** yyyGaussianQuasiPeriodic: Guassian process fit with an additional exponential kernel for quasiperiodicity
-** yyyGaussianQuasiPeriodicLogs: Same as before, but using the log of the hyperparameters for better convergence
-** yyyOnePeriod: One sinusoidal to represent the activity
-** yyyPolynomial: A second order polynomial to represent the activity
-** yyyThreeHarmonics: Three sinusoids with periods equal to Prot, Prot/2 and Prot/3
-** yyyThreePeriods: Three sinusoids with independent periods
-** yyyThreePeriodsMCMC: Same as the one above but using a full MCMC to estimate uncertainties
-** yyyTwoPeriods: Only two sinusoids with independent periods
+    * yyyGaussianPeriodic: Gaussian process fit with a periodic Kernel
+    * yyyGaussianQuasiPeriodic: Guassian process fit with an additional exponential kernel for quasiperiodicity
+    * yyyGaussianQuasiPeriodicLogs: Same as before, but using the log of the hyperparameters for better convergence
+    * yyyOnePeriod: One sinusoidal to represent the activity
+    * yyyPolynomial: A second order polynomial to represent the activity
+    * yyyThreeHarmonics: Three sinusoids with periods equal to Prot, Prot/2 and Prot/3
+    * yyyThreePeriods: Three sinusoids with independent periods
+    * yyyThreePeriodsMCMC: Same as the one above but using a full MCMC to estimate uncertainties
+    * yyyTwoPeriods: Only two sinusoids with independent periods
 * SimpleMassXXX: Simple polynomial fit only using part of the dataset
-** yyyWeek1: Only uses the first week of intense observations
-** yyyWeek2: Only uses the second week of intense observations
-** yyyTwoWeeks: Uses both weeks with an independent polynomial for each one.
+    * yyyWeek1: Only uses the first week of intense observations
+    * yyyWeek2: Only uses the second week of intense observations
+    * yyyTwoWeeks: Uses both weeks with an independent polynomial for each one.
 
 ## Comparison folder:
 
